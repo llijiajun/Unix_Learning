@@ -13,7 +13,7 @@ BEGIN	{
 	printf("\tif (argc!=2)\n")
 	printf("\t\terr_quit(\"usage: a.out <dirname>\");\n\n")
 	FS="\t+"
-	while (getline <"sysconf.sym" > 0){
+	while (getline < "sysconf.sym" > 0){
 		printf("#ifdef %s \n",$1)
 		printf("\tprintf(\"%s defined to be %%ld \\n\",(long)%s+0);\n",$1,$1)
 		printf("#else\n")
